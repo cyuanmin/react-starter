@@ -32,3 +32,19 @@
 - npm install  @types/react @types/react-dom --save-dev
 - npm install --save-dev typescript awesome-typescript-loader source-map-loader
 - Update webpack.config.js. It should look like [the following](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)
+
+# Adding TS Lint
+- npm install tslint tslint-loader --save-dev
+- Add lint check in webpack.config.js
+```
+{
+                enforce: 'pre',
+                test: /\.tsx?$/,
+                loader: 'tslint-loader',
+                exclude: /node_modules/,
+                options: {
+                    failOnHint: true,
+                    configuration: require('./tslint.json')
+                }
+            },
+```
