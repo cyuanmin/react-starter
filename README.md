@@ -1,4 +1,4 @@
-#Setting up package
+# Setting up package
 npm init
 npm install webpack --save-dev
 npm install typescript ts-loader --save-dev
@@ -15,7 +15,7 @@ Added the following scripts:
     "build": "webpack"
   },
 Create a .gitignore file
-#Creating basic app
+# Creating basic app
 Create a src directory
 Create index.ts
 npm run start
