@@ -1,12 +1,10 @@
 # Setting up package
 -  npm init
 -  npm install webpack --save-dev
--  npm install typescript ts-loader --save-dev
+-  npm install typescript --save-dev
 -  tsc --init
--  npm install debug --save
--  npm install tslint tslint-loader css-loader style-loader --save-dev 
+-  npm install css-loader style-loader --save-dev 
 -  npm install webpack-dev-server --save-dev
--  npm install babel-core babel-loader babel-preset-babili --save-dev 
 -  tslint --init
 -  Create a webpack.config.json file
 -  Added the following scripts:
@@ -25,6 +23,12 @@
 
 # Creating basic app
 - Create a src directory
-- Create index.ts under src
+- Create index.tsx under src
 - Create index.html under root
 - npm run start
+
+# Adding React code
+- npm install --save react react-dom --save
+- npm install  @types/react @types/react-dom --save-dev
+- npm install --save-dev typescript awesome-typescript-loader source-map-loader
+- Update webpack.config.js. It should look like [the following](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)
