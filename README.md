@@ -12,7 +12,7 @@
 -  Added the following scripts:
 ```
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --progress",
+    "start": "./node_modules/.bin/webpack-dev-server",
     "build": "webpack"
   },
   ```
@@ -25,5 +25,6 @@
 
 # Creating basic app
 - Create a src directory
-- Create index.ts
+- Create index.ts under src
+- Create index.html under root
 - npm run start
