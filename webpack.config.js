@@ -3,7 +3,7 @@ module.exports = {
         "qtclient": './src/index.tsx'
     },
     output: {
-        path: __dirname + 'dist',
+        path: __dirname + '/dist',
         filename: '[name].bundle.js',
         publicPath: '/dist'
     },
