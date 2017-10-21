@@ -49,7 +49,7 @@
             },
 ```
 
-# Adding React code
+# React simple demo
 - First let's put together a simple component
 ```
 import * as React from "react";
@@ -95,3 +95,87 @@ ReactDOM.render(
     </body>
 </html>
 ```
+
+# React router v4 simple demo
+- Make sure webpack.config.js has the following settings. Also publicPath in output is "/"
+```
+ devServer: {
+    historyApiFallback: true,
+  },
+```
+- Now let's put together a complete example. First define a layout in PrimaryLayout.tsx:
+```
+import { Route, Switch } from 'react-router-dom';
+import * as React from "react";
+
+export const PrimaryLayout: () => JSX.Element = (): JSX.Element => (
+    <div className="primary-layout">
+        <header>
+            React Router Demo
+        </header>
+        <main>
+            <Switch>
+                <Route path="/" exact component={HomePage} />
+                <Route path="/user" component={UsersPage} />
+            </Switch>
+        </main>
+    </div>
+);
+
+const HomePage: () => JSX.Element = (): JSX.Element => <div>Home Page</div>;
+
+const UsersPage: () => JSX.Element = (): JSX.Element => <div>Users Page</div>;
+```
+- Now let's define an app in App.tsx
+```
+import * as React from "react";
+import { BrowserRouter as Router} from 'react-router-dom';
+import { PrimaryLayout } from "./PrimaryLayout";
+
+export const App: () => JSX.Element = (): JSX.Element =>
+    (
+        <Router>
+            <PrimaryLayout />
+        </Router>
+    );
+```
+- Last, we will define it in index.tsx file:
+```
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import { BrowserRouter as Router} from 'react-router-dom';
+import { App } from "./components/App";
+
+ReactDOM.render(
+    <Router>
+        <App/>
+    </Router>,
+    document.getElementById("example")
+);
+```
+- The index.html stays the same:
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Hello React!</title>
+    </head>
+    <body>
+        <div id="example"></div>
+
+        <!-- Dependencies -->
+        <script src="./node_modules/react/umd/react.development.js"></script>
+        <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+
+        <!-- Main -->
+        <script src="./dist/qtclient.bundle.js"></script>
+    </body>
+</html>
+```
+
+
+
+
+
+
