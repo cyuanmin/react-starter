@@ -97,7 +97,7 @@ ReactDOM.render(
 ```
 
 # React router v4 simple demo
-- Make sure webpack.config.js has the following settings. Also publicPath in output is "/"
+- Make sure webpack.config.js has the following settings. Also publicPath in output is "/dist"
 ```
  devServer: {
     historyApiFallback: true,
