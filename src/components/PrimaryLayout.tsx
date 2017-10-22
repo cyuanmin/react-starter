@@ -1,5 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import * as React from "react";
+import {HomePage} from "../components/home/HomePage";
+import {AboutPage} from "../components/about/AboutPage";
 
 export const PrimaryLayout: () => JSX.Element = (): JSX.Element => (
     <div className="container">
@@ -8,11 +10,7 @@ export const PrimaryLayout: () => JSX.Element = (): JSX.Element => (
         </header>
         <main>        
             <Route path="/" exact component={HomePage} />
-            <Route path="/user" component={UsersPage} />
+            <Route path="/about" component={AboutPage} />
         </main>
     </div>
 );
-
-const HomePage: () => JSX.Element = (): JSX.Element => <div>Home Page</div>;
-
-const UsersPage: () => JSX.Element = (): JSX.Element => <div>Users Page</div>;
