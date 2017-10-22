@@ -5,6 +5,6 @@ import { PrimaryLayout } from "./PrimaryLayout";
 export const App: () => JSX.Element = (): JSX.Element =>
     (
         <Router>
-            <PrimaryLayout />
+            <PrimaryLayout/>
         </Router>
     );

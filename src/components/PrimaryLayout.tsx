@@ -2,15 +2,13 @@ import { Route, Switch } from 'react-router-dom';
 import * as React from "react";
 
 export const PrimaryLayout: () => JSX.Element = (): JSX.Element => (
-    <div className="primary-layout">
-        <header>
+    <div className="container">
+        <header className="jumbotron">
             React Router Demo
         </header>
-        <main>
-            <Switch>
-                <Route path="/" exact component={HomePage} />
-                <Route path="/user" component={UsersPage} />
-            </Switch>
+        <main>        
+            <Route path="/" exact component={HomePage} />
+            <Route path="/user" component={UsersPage} />
         </main>
     </div>
 );

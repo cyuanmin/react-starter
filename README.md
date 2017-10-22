@@ -174,6 +174,22 @@ ReactDOM.render(
 </html>
 ```
 
+# Add bootstrap styles
+- npm install bootstrap --save
+- npm install file-loader url-loader --save-dev
+- In webpack.config.js, add the following:
+```
+    {test: /(\.css)$/, loaders: ['style-loader', 'css-loader']},
+    {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'},
+    {test: /\.(woff|woff2)$/, loader: 'url-loader?prefix=font/&limit=5000'},
+    {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=application/octet-stream'},
+    {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml'}
+```
+- In index.tsx file, add the following:
+```
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+```
+
 
 
 
