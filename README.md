@@ -190,6 +190,22 @@ ReactDOM.render(
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 ```
 
+# Add unit test
+- npm install @types/chai @types/mocha mocha chai ts-node --save-dev
+- Add the following script in package.json:
+```
+    "test": "mocha --watch --reporter spec --compilers ts:ts-node/register ./src/**/*.test.ts"
+```
+- To run unit test and dev server together, run npm install npm-run-all
+- Refactor scripts section to be the following:
+```
+  "scripts": {
+    "start": "npm-run-all --parallel dev test",
+    "dev": "./node_modules/.bin/webpack-dev-server",
+    "build": "webpack",
+    "test": "mocha --watch --reporter spec --compilers ts:ts-node/register ./src/**/*.test.ts"
+  }
+```
 
 
 
